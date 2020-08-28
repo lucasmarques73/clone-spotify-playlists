@@ -1,8 +1,8 @@
 import { useEffect } from "react";
 import { useRouter } from "next/router";
-import requestAuthTokesFromSpotify from "./services/requestAuthTokesFromSpotify";
-import requestAuthCodeFromAPI from "./services/requestAuthCodeFromAPI";
-import manageLocalStorage from "./services/manageLocalStorage";
+import requestAuthTokesFromSpotify from "../services/requestAuthTokesFromSpotify";
+import requestAuthCodeFromAPI from "../services/requestAuthCodeFromAPI";
+import manageLocalStorage from "../services/manageLocalStorage";
 
 export default function Home() {
   const router = useRouter();

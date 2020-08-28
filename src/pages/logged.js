@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Sidebar from "../components/Sidebar";
-import requestSearchPlaylistsSpotify from "./services/requestSearchPlaylistsSpotify";
-import requestTracksFromPlaylist from "./services/requestTracksFromPlaylist";
+import requestSearchPlaylistsSpotify from "../services/requestSearchPlaylistsSpotify";
+import requestTracksFromPlaylist from "../services/requestTracksFromPlaylist";
 
 export default function Home() {
   const [query, setQuery] = useState("");

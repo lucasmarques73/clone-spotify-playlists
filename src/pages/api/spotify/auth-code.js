@@ -1,4 +1,4 @@
-import encondeClientIdAndSecretToBase64 from "../../services/encondeClientIdAndSecretToBase64";
+import encondeClientIdAndSecretToBase64 from "../../../services/encondeClientIdAndSecretToBase64";
 
 const Ok = 200;
 const MethodNotAllowed = 405;
