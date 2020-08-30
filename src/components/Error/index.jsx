@@ -1,4 +1,4 @@
-export default function Error() {
+const Error = () => {
   return (
     <div className="error">
       <div>
@@ -8,3 +8,5 @@ export default function Error() {
     </div>
   )
 }
+
+export default Error
