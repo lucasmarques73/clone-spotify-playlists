@@ -1,8 +1,9 @@
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
 import Error from '../components/Error'
+import Home from 'components/Home'
 
-export default function Home() {
+export default function Index() {
   const router = useRouter()
   const [hasError, setHasError] = useState(false)
 
@@ -15,15 +16,7 @@ export default function Home() {
   return (
     <>
       {hasError ? <Error /> : null}
-      <main className="layout">
-        <section className="container">
-          <p className="text">Clone playlists públicas para você!!</p>
-          <a className="button" href="/api/spotify/login">
-            <span>Login com Spotify</span>
-            <img className="logo" src="/img/spotify.png" />
-          </a>
-        </section>
-      </main>
+      <Home />
     </>
   )
 }
