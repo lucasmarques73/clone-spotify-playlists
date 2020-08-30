@@ -9,5 +9,5 @@ export default function Sidebar() {
       </header>
       <div></div>
     </aside>
-  );
+  )
 }

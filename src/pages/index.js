@@ -1,16 +1,16 @@
-import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
-import Error from "../components/Error";
+import { useRouter } from 'next/router'
+import { useEffect, useState } from 'react'
+import Error from '../components/Error'
 
 export default function Home() {
-  const router = useRouter();
-  const [hasError, setHasError] = useState(false);
+  const router = useRouter()
+  const [hasError, setHasError] = useState(false)
 
   useEffect(() => {
     if (router.query.error) {
-      setHasError(true);
+      setHasError(true)
     }
-  }, [router]);
+  }, [router])
 
   return (
     <>
@@ -25,5 +25,5 @@ export default function Home() {
         </section>
       </main>
     </>
-  );
+  )
 }

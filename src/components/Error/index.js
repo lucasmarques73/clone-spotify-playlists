@@ -6,5 +6,5 @@ export default function Error() {
       </div>
       <button className="error-close" />
     </div>
-  );
+  )
 }

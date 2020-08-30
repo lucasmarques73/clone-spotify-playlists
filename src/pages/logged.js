@@ -1,23 +1,24 @@
-import { useState } from "react";
-import Sidebar from "../components/Sidebar";
-import requestSearchPlaylistsSpotify from "../services/requestSearchPlaylistsSpotify";
-import requestTracksFromPlaylist from "../services/requestTracksFromPlaylist";
+/* eslint-disable no-unused-vars */
+import { useState } from 'react'
+import Sidebar from '../components/Sidebar'
+import requestSearchPlaylistsSpotify from '../services/requestSearchPlaylistsSpotify'
+import requestTracksFromPlaylist from '../services/requestTracksFromPlaylist'
 
 export default function Home() {
-  const [query, setQuery] = useState("");
-  const [playlists, setPlaylists] = useState([]);
-  const [tracks, setTracks] = useState([]);
+  const [query, setQuery] = useState('')
+  const [playlists, setPlaylists] = useState([])
+  const [tracks, setTracks] = useState([])
 
   const seachPlaylists = async (e) => {
-    e.preventDefault();
-    const data = await requestSearchPlaylistsSpotify(query);
-    setPlaylists(data.playlists.items);
-  };
+    e.preventDefault()
+    const data = await requestSearchPlaylistsSpotify(query)
+    setPlaylists(data.playlists.items)
+  }
 
   const getTracksFromPlaylist = async (playlistId) => {
-    const data = await requestTracksFromPlaylist(playlistId);
-    setTracks(data.items);
-  };
+    const data = await requestTracksFromPlaylist(playlistId)
+    setTracks(data.items)
+  }
 
   return (
     <div className="layout logged">
@@ -36,5 +37,5 @@ export default function Home() {
         </form>
       </main>
     </div>
-  );
+  )
 }
