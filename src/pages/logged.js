@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import { useState } from 'react'
 import Sidebar from '../components/Sidebar'
 import requestSearchPlaylistsSpotify from '../services/requestSearchPlaylistsSpotify'
@@ -19,6 +18,8 @@ export default function Home() {
     const data = await requestTracksFromPlaylist(playlistId)
     setTracks(data.items)
   }
+
+  const foo = 'bla'
 
   return (
     <div className="layout logged">
