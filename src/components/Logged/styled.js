@@ -1,28 +1,49 @@
 import styled from 'styled-components'
 
 export const Wrapper = styled.main`
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  width: 100%;
+`
+
+export const SearchWrapper = styled.section`
   background-image: linear-gradient(rgb(70, 76, 82), rgb(7, 7, 8) 85%);
   background-color: var(--black);
   color: var(--white);
-  width: 100%;
   height: 100%;
+  width: 69%;
   padding: 3rem;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
 `
 
-export const Title = styled.h1`
-  font-size: 2rem;
+export const SearchForm = styled.form`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+`
+
+export const SearchInput = styled.input`
+  background: none;
+  border: none;
+  outline: none;
+  color: var(--white);
+  line-height: 3rem;
+  font-size: 1.4rem;
   font-weight: 400;
-  margin: 3rem;
+  margin-right: 3rem;
+  flex-grow: 1;
+
+  :focus {
+    border-bottom: solid 1px var(--green);
+  }
 `
 
-export const Text = styled.span``
-
-export const Button = styled.a`
+export const SearchButton = styled.button`
   background-color: var(--green);
   border-radius: 30px;
   outline: none;

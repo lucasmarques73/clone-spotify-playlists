@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const Wrapper = styled.aside`
   background: var(--ligth-black);
   box-shadow: 0px 5px 8px var(--ligth-black);
-  height: 100vh;
+  height: 100%;
   width: 31%;
 `
 
