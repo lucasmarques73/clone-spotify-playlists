@@ -1,12 +1,20 @@
-import GlobalStyles from '../styles/global'
+import { Head } from 'next/app'
+import GlobalStyles from 'styles/global'
 
 // eslint-disable-next-line react/prop-types
-const MyApp = ({ Component, pageProps }) => {
+const App = ({ Component, pageProps }) => {
   return (
-    <GlobalStyles>
+    <>
+      <Head>
+        <title>Clone Spotify Playlists</title>
+        <link rel="shortcut icon" href="/img/favicon.ico" />
+        <link rel="apple-touch-icon" href="/img/favicon.ico" />
+        <meta name="description" content="" />
+      </Head>
+      <GlobalStyles />
       <Component {...pageProps} />
-    </GlobalStyles>
+    </>
   )
 }
 
-export default MyApp
+export default App

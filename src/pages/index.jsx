@@ -20,7 +20,7 @@ export default function Home() {
           <p className="text">Clone playlists públicas para você!!</p>
           <a className="button" href="/api/spotify/login">
             <span>Login com Spotify</span>
-            <img className="logo" src="/spotify.png" />
+            <img className="logo" src="/img/spotify.png" />
           </a>
         </section>
       </main>
