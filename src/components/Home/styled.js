@@ -20,11 +20,6 @@ export const Title = styled.h1`
   margin: 3rem;
 `
 
-export const Logo = styled.img`
-  width: 2rem;
-  height: 2rem;
-`
-
 export const Text = styled.span``
 
 export const Button = styled.a`

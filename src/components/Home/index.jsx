@@ -1,3 +1,4 @@
+import Logo from 'components/Logo'
 import * as S from './styled'
 
 const Home = () => {
@@ -6,7 +7,7 @@ const Home = () => {
       <S.Title>Clone playlists públicas para você!!</S.Title>
       <S.Button href="/api/spotify/login">
         <S.Text>Login com Spotify</S.Text>
-        <S.Logo src="/img/spotify.png" alt="Spotify Logo" />
+        <Logo />
       </S.Button>
     </S.Wrapper>
   )
