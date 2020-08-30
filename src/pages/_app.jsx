@@ -1,8 +1,12 @@
-import '../styles/globals.css'
+import GlobalStyles from '../styles/global'
 
 // eslint-disable-next-line react/prop-types
-function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+const MyApp = ({ Component, pageProps }) => {
+  return (
+    <GlobalStyles>
+      <Component {...pageProps} />
+    </GlobalStyles>
+  )
 }
 
 export default MyApp
