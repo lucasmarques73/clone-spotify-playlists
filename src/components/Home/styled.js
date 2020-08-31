@@ -38,7 +38,7 @@ export const Button = styled.a`
   justify-content: space-evenly;
   align-items: center;
 
-  :hover {
+  &:hover {
     background-color: var(--dark-green);
   }
 `

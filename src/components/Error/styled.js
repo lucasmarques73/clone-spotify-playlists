@@ -25,7 +25,7 @@ export const ClosseButton = styled.button`
   padding: 0.5rem;
   color: var(--white);
 
-  :after {
+  &:after {
     content: '✕';
   }
 `
