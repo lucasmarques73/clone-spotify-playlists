@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react'
 import Logged from '.'
 
-describe('<Logged />', () => {
+describe.skip('<Logged />', () => {
   beforeEach(() => {
     render(<Logged />)
   })

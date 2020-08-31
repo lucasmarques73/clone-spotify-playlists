@@ -12,7 +12,7 @@ export const SearchWrapper = styled.section`
   background-color: var(--black);
   color: var(--white);
   height: 100%;
-  width: 69%;
+  width: 80%;
   padding: 3rem;
   text-align: center;
   display: flex;
@@ -49,6 +49,7 @@ export const SearchButton = styled.button`
   outline: none;
   border: none;
   text-decoration: none;
+  cursor: pointer;
   color: var(--white);
   line-height: 3rem;
   font-size: 1.4rem;
@@ -59,7 +60,7 @@ export const SearchButton = styled.button`
   justify-content: space-evenly;
   align-items: center;
 
-  :hover {
+  &:hover {
     background-color: var(--dark-green);
   }
 `
