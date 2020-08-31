@@ -15,7 +15,7 @@ export default function Index() {
 
   return (
     <>
-      {hasError ? <Error /> : null}
+      {hasError && <Error />}
       <Home />
     </>
   )
