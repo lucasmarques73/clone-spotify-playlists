@@ -24,7 +24,7 @@ export const PlaylistItem = styled.li`
 
 export const Cover = styled.img`
   width: 3.5rem;
-  border-radius: 5rem;
+  height: 3.5rem;
 `
 
 export const Name = styled.span`
