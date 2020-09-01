@@ -10,7 +10,9 @@ const PlaylistTracks = ({
   tracks,
   showTracks,
   goBack,
-  handleTrackClick
+  handleTrackClick,
+  handleSelectAllTracks,
+  tracksSelected
 }) => {
   return (
     showTracks && (
@@ -21,7 +23,12 @@ const PlaylistTracks = ({
           </S.IconWrapper>
         </S.GoBackButton>
         <PlaylistHead playlist={playlist} />
-        <TrackList tracks={tracks} handleTrackClick={handleTrackClick} />
+        <TrackList
+          tracks={tracks}
+          handleTrackClick={handleTrackClick}
+          handleSelectAllTracks={handleSelectAllTracks}
+          tracksSelected={tracksSelected}
+        />
       </S.Wrapper>
     )
   )
@@ -32,6 +39,8 @@ PlaylistTracks.propTypes = {
   tracks: PropTypes.array,
   showTracks: PropTypes.bool,
   goBack: PropTypes.func,
-  handleTrackClick: PropTypes.func
+  handleTrackClick: PropTypes.func,
+  handleSelectAllTracks: PropTypes.func,
+  tracksSelected: PropTypes.array
 }
 export default PlaylistTracks

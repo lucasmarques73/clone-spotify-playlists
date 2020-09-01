@@ -1,5 +1,20 @@
 import styled from 'styled-components'
 
+export const CheckAllWrapper = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin: 1rem 0;
+  padding: 0 4.1rem;
+`
+
+export const CheckAllText = styled.span`
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin-right: 3rem;
+`
+
 export const ListWrapper = styled.section`
   width: 100%;
   overflow: scroll;
@@ -15,12 +30,18 @@ export const Item = styled.li`
   padding: 1rem 0;
   display: flex;
   align-items: center;
+  justify-content: space-between;
 
   cursor: pointer;
 
   &:hover {
     background-color: var(--grey);
   }
+`
+
+export const TrackWrapper = styled.div`
+  display: flex;
+  align-items: center;
 `
 
 export const Cover = styled.img`
@@ -50,4 +71,8 @@ export const Album = styled.span`
 
 export const Bold = styled.span`
   font-weight: 600;
+`
+
+export const CheckboxWrapper = styled.div`
+  padding: 0 3rem;
 `

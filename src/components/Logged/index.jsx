@@ -21,6 +21,11 @@ const Logged = () => {
     else setTracksSelected([...tracksSelected, trackId])
   }
 
+  const handleSelectAllTracks = () => {
+    if (tracksSelected.length === tracks.length) setTracksSelected([])
+    else setTracksSelected(tracks.map((track) => track.id))
+  }
+
   return (
     <S.Wrapper>
       <Sidebar />
@@ -38,6 +43,8 @@ const Logged = () => {
         tracks={tracks}
         goBack={goBack}
         handleTrackClick={handleTrackClick}
+        handleSelectAllTracks={handleSelectAllTracks}
+        tracksSelected={tracksSelected}
       />
     </S.Wrapper>
   )
