@@ -25,6 +25,7 @@ export const SearchForm = styled.form`
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
+  margin-bottom: 2rem;
 `
 
 export const SearchInput = styled.input`
