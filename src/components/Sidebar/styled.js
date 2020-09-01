@@ -9,7 +9,7 @@ export const Wrapper = styled.aside`
 
 export const Header = styled.header`
   margin: 2rem;
-  border-bottom: solid 1px var(--white);
+  border-bottom: solid 1px var(--grey);
   padding-bottom: 1rem;
 `
 
