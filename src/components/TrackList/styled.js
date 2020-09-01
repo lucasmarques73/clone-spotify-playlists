@@ -15,6 +15,9 @@ export const Item = styled.li`
   padding: 1rem 0;
   display: flex;
   align-items: center;
+
+  cursor: pointer;
+
   &:hover {
     background-color: var(--grey);
   }

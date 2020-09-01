@@ -5,7 +5,13 @@ import { ArrowBackOutline as Back } from '@styled-icons/evaicons-outline/ArrowBa
 
 import * as S from './styled'
 
-const PlaylistTracks = ({ playlist, tracks, showTracks, goBack }) => {
+const PlaylistTracks = ({
+  playlist,
+  tracks,
+  showTracks,
+  goBack,
+  handleTrackClick
+}) => {
   return (
     showTracks && (
       <S.Wrapper>
@@ -15,7 +21,7 @@ const PlaylistTracks = ({ playlist, tracks, showTracks, goBack }) => {
           </S.IconWrapper>
         </S.GoBackButton>
         <PlaylistHead playlist={playlist} />
-        <TrackList tracks={tracks} />
+        <TrackList tracks={tracks} handleTrackClick={handleTrackClick} />
       </S.Wrapper>
     )
   )
@@ -25,6 +31,7 @@ PlaylistTracks.propTypes = {
   playlist: PropTypes.object,
   tracks: PropTypes.array,
   showTracks: PropTypes.bool,
-  goBack: PropTypes.func
+  goBack: PropTypes.func,
+  handleTrackClick: PropTypes.func
 }
 export default PlaylistTracks

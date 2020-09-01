@@ -1,13 +1,13 @@
 import PropTypes from 'prop-types'
 import * as S from './styled'
 
-const TrackList = ({ tracks }) => {
+const TrackList = ({ tracks, handleTrackClick }) => {
   return (
     <S.ListWrapper>
       <S.List>
         {tracks &&
           tracks.map((track) => (
-            <S.Item key={track.id}>
+            <S.Item key={track.id} onClick={() => handleTrackClick(track.id)}>
               <S.Cover src={track.album.cover} />
               <S.Info>
                 <S.Name>{track.name}</S.Name>
@@ -26,9 +26,8 @@ const TrackList = ({ tracks }) => {
 }
 
 TrackList.propTypes = {
-  playlist: PropTypes.object,
   tracks: PropTypes.array,
-  showTracks: PropTypes.bool
+  handleTrackClick: PropTypes.func
 }
 
 export default TrackList

@@ -9,9 +9,16 @@ const Logged = () => {
   const [playlists, setPlaylists] = useState([])
   const [playlistSelected, setPlaylistSelected] = useState([])
   const [tracks, setTracks] = useState([])
+  const [tracksSelected, setTracksSelected] = useState([])
 
   const goBack = () => {
     setTracks([])
+  }
+
+  const handleTrackClick = (trackId) => {
+    if (tracksSelected.includes(trackId))
+      setTracksSelected(tracksSelected.filter((id) => id !== trackId))
+    else setTracksSelected([...tracksSelected, trackId])
   }
 
   return (
@@ -30,6 +37,7 @@ const Logged = () => {
         playlist={playlistSelected}
         tracks={tracks}
         goBack={goBack}
+        handleTrackClick={handleTrackClick}
       />
     </S.Wrapper>
   )
