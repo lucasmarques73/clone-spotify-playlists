@@ -22,6 +22,7 @@ ol, ul {
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    overflow: hidden;
 }
 
 body {
@@ -30,6 +31,7 @@ body {
   --dark-green: #1aa34a;
   --black: #191414;
   --ligth-black: #0f1015;
+  --grey: rgba(255, 255, 255, .25);
   --red: #ec3e36;
 }
 
