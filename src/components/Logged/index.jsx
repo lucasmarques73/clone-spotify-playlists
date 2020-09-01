@@ -1,43 +1,36 @@
 import { useState } from 'react'
 import Sidebar from 'components/Sidebar'
 import * as S from './styled'
-import requestSearchPlaylistsSpotify from 'services/requestSearchPlaylistsSpotify'
-// import requestTracksFromPlaylist from 'services/requestTracksFromPlaylist'
+
 import SearchPlaylists from 'components/SearchPlaylists'
-import searchPlaylistsMapper from 'mappers/searchPlaylistsMapper'
+import PlaylistTracks from 'components/PlaylistTracks'
 
 const Logged = () => {
-  const [query, setQuery] = useState('')
   const [playlists, setPlaylists] = useState([])
-  // const [tracks, setTracks] = useState([])
+  const [playlistSelected, setPlaylistSelected] = useState([])
+  const [tracks, setTracks] = useState([])
 
-  const seachPlaylists = async (e) => {
-    e.preventDefault()
-    const data = await requestSearchPlaylistsSpotify(query)
-    setPlaylists(searchPlaylistsMapper(data.playlists))
+  const goBack = () => {
+    setTracks([])
   }
-
-  // const getTracksFromPlaylist = async (playlistId) => {
-  //   const data = await requestTracksFromPlaylist(playlistId)
-  //   setTracks(data.items)
-  // }
 
   return (
     <S.Wrapper>
       <Sidebar />
-      <S.SearchWrapper onSubmit={seachPlaylists}>
-        <S.SearchForm>
-          <S.SearchInput
-            type="text"
-            placeholder="Digite uma playlist"
-            autoComplete="off"
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
-          />
-          <S.SearchButton>Buscar</S.SearchButton>
-        </S.SearchForm>
-        <SearchPlaylists playlists={playlists} />
-      </S.SearchWrapper>
+      <SearchPlaylists
+        showSearch={tracks.length === 0}
+        playlists={playlists}
+        setPlaylists={setPlaylists}
+        tracks={tracks}
+        setTracks={setTracks}
+        setPlaylistSelected={setPlaylistSelected}
+      />
+      <PlaylistTracks
+        showTracks={tracks.length > 0}
+        playlist={playlistSelected}
+        tracks={tracks}
+        goBack={goBack}
+      />
     </S.Wrapper>
   )
 }
