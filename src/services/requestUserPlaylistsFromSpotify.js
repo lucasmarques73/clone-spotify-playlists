@@ -1,6 +1,6 @@
 import manageLocalStorage from './manageLocalStorage'
 
-export default async function requestUserPlaylistsFromSpotity() {
+export default async function requestUserPlaylistsFromSpotify() {
   const { access_token } = manageLocalStorage.getItem('tokens')
 
   const response = await fetch(
@@ -9,5 +9,5 @@ export default async function requestUserPlaylistsFromSpotity() {
       headers: { Authorization: `'Bearer ${access_token}'` }
     }
   )
-  return response.json()
+  return await response.json()
 }

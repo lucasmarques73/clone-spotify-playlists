@@ -6,5 +6,5 @@ export default async function requestUserDataFromSpotify() {
   const response = await fetch('https://api.spotify.com/v1/me', {
     headers: { Authorization: `'Bearer ${access_token}'` }
   })
-  return response.json()
+  return await response.json()
 }

@@ -13,5 +13,5 @@ export default async function requestAuthTokesFromSpotify(code, authCode) {
       redirect_uri: process.env.NEXT_PUBLIC_SPOTIFY_REDIRECT_URI
     })
   })
-  return response.json()
+  return await response.json()
 }

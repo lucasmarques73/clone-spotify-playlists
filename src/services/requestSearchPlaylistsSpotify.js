@@ -9,5 +9,5 @@ export default async function requestSearchPlaylistsSpotify(query) {
       headers: { Authorization: `'Bearer ${access_token}'` }
     }
   )
-  return response.json()
+  return await response.json()
 }
