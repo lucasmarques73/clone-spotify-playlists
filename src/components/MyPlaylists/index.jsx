@@ -9,7 +9,7 @@ const MyPlaylists = ({ playlists }) => {
         {playlists &&
           playlists.map((playlist) => (
             <S.Item key={playlist.id}>
-              <S.Cover src={playlist.cover} />
+              {playlist.cover && <S.Cover src={playlist.cover} />}
               <S.Name>{playlist.name}</S.Name>
             </S.Item>
           ))}
