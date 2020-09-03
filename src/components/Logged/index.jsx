@@ -26,6 +26,10 @@ const Logged = () => {
     else setTracksSelected(tracks.map((track) => track.id))
   }
 
+  const clonePlaylist = () => {
+    console.log(tracksSelected)
+  }
+
   return (
     <S.Wrapper>
       <Sidebar />
@@ -45,6 +49,7 @@ const Logged = () => {
         handleTrackClick={handleTrackClick}
         handleSelectAllTracks={handleSelectAllTracks}
         tracksSelected={tracksSelected}
+        clonePlaylist={clonePlaylist}
       />
     </S.Wrapper>
   )

@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import * as S from './styled'
 
-const PlaylistHead = ({ playlist }) => {
+const PlaylistHead = ({ playlist, cantClonePlaylist, clonePlaylist }) => {
   return (
     <S.Wrapper>
       <S.Item>
@@ -18,14 +18,17 @@ const PlaylistHead = ({ playlist }) => {
           </S.Owner>
         </S.Info>
       </S.Item>
-      <S.Button>Clonar Playlist</S.Button>
+      <S.Button disabled={!cantClonePlaylist} onClick={clonePlaylist}>
+        Clonar Playlist
+      </S.Button>
     </S.Wrapper>
   )
 }
 
 PlaylistHead.propTypes = {
   playlist: PropTypes.object,
-  onPlaylistClick: PropTypes.func
+  cantClonePlaylist: PropTypes.bool,
+  clonePlaylist: PropTypes.func
 }
 
 export default PlaylistHead

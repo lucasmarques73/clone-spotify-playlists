@@ -62,4 +62,8 @@ export const Button = styled.button`
   &:hover {
     background-color: var(--dark-green);
   }
+
+  &:disabled {
+    background-color: var(--grey);
+  }
 `
