@@ -1,6 +1,8 @@
 import PropTypes from 'prop-types'
 import * as S from './styled'
 
+const coverDefault = '/img/spotify.png'
+
 const MyPlaylists = ({ playlists }) => {
   return (
     <S.Wrapper>
@@ -9,7 +11,7 @@ const MyPlaylists = ({ playlists }) => {
         {playlists &&
           playlists.map((playlist) => (
             <S.Item key={playlist.id}>
-              {playlist.cover && <S.Cover src={playlist.cover} />}
+              <S.Cover src={playlist.cover ? playlist.cover : coverDefault} />
               <S.Name>{playlist.name}</S.Name>
             </S.Item>
           ))}
