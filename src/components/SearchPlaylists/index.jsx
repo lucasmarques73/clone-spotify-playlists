@@ -1,40 +1,26 @@
 import { useState } from 'react'
 import PropTypes from 'prop-types'
 import PlaylistList from 'components/PlaylistList'
-import requestSearchPlaylistsSpotify from 'services/requestSearchPlaylistsSpotify'
-import requestTracksFromPlaylist from 'services/requestTracksFromPlaylist'
-import searchPlaylistsMapper from 'mappers/searchPlaylistsMapper'
-import tracksMapper from 'mappers/tracksMapper'
+
 import * as S from './styled'
 
 const SearchPlaylists = ({
   playlists,
-  setPlaylists,
   tracks,
-  setTracks,
-  setPlaylistSelected,
+  getTracksFromPlaylist,
+  seachPlaylists,
   showSearch
 }) => {
   const [query, setQuery] = useState('')
 
-  const seachPlaylists = async (e) => {
-    e.preventDefault()
-    const data = await requestSearchPlaylistsSpotify(query)
-    setPlaylists(searchPlaylistsMapper(data.playlists))
-    setTracks([])
-  }
-
-  const getTracksFromPlaylist = async (playlistId) => {
-    setPlaylistSelected(
-      playlists.filter((playlist) => playlistId === playlist.id)[0]
-    )
-    const data = await requestTracksFromPlaylist(playlistId)
-    setTracks(tracksMapper(data))
-  }
-
   return (
     showSearch && (
-      <S.SearchWrapper onSubmit={seachPlaylists}>
+      <S.SearchWrapper
+        onSubmit={(e) => {
+          e.preventDefault()
+          seachPlaylists(query)
+        }}
+      >
         <S.SearchForm>
           <S.SearchInput
             type="text"
@@ -58,11 +44,10 @@ const SearchPlaylists = ({
 
 SearchPlaylists.propTypes = {
   playlists: PropTypes.array,
-  setPlaylists: PropTypes.func,
   tracks: PropTypes.array,
-  setTracks: PropTypes.func,
-  setPlaylistSelected: PropTypes.func,
-  showSearch: PropTypes.bool
+  showSearch: PropTypes.bool,
+  getTracksFromPlaylist: PropTypes.func,
+  seachPlaylists: PropTypes.func
 }
 
 export default SearchPlaylists

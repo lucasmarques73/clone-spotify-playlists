@@ -6,11 +6,15 @@ import SearchPlaylists from 'components/SearchPlaylists'
 import PlaylistTracks from 'components/PlaylistTracks'
 import requestCreateAPlaylistSpotify from 'services/requestCreateAPlaylistSpotify'
 import requestAddTracksAPlaylistSpotify from 'services/requestAddTracksAPlaylistSpotify'
+import requestUserDataFromSpotify from 'services/requestUserDataFromSpotify'
+import requestSearchPlaylistsSpotify from 'services/requestSearchPlaylistsSpotify'
+import requestTracksFromPlaylist from 'services/requestTracksFromPlaylist'
+import requestUserPlaylistsFromSpotify from 'services/requestUserPlaylistsFromSpotify'
+import searchPlaylistsMapper from 'mappers/searchPlaylistsMapper'
 import addTracksMapper from 'mappers/addTracksMapper'
 import userPlaylistsMapper from 'mappers/userPlaylistsMapper'
-import requestUserDataFromSpotify from 'services/requestUserDataFromSpotify'
+import tracksMapper from 'mappers/tracksMapper'
 import userMapper from 'mappers/userMapper'
-import requestUserPlaylistsFromSpotify from 'services/requestUserPlaylistsFromSpotify'
 
 const Logged = () => {
   const [playlists, setPlaylists] = useState([])
@@ -42,6 +46,20 @@ const Logged = () => {
     setTracks([])
   }
 
+  const seachPlaylists = async (query) => {
+    const data = await requestSearchPlaylistsSpotify(query)
+    setPlaylists(searchPlaylistsMapper(data.playlists))
+    setTracks([])
+  }
+
+  const getTracksFromPlaylist = async (playlistId) => {
+    setPlaylistSelected(
+      playlists.filter((playlist) => playlistId === playlist.id)[0]
+    )
+    const data = await requestTracksFromPlaylist(playlistId)
+    setTracks(tracksMapper(data))
+  }
+
   const handleTrackClick = (trackId) => {
     if (tracksSelected.includes(trackId))
       setTracksSelected(tracksSelected.filter((id) => id !== trackId))
@@ -69,10 +87,9 @@ const Logged = () => {
       <SearchPlaylists
         showSearch={tracks.length === 0}
         playlists={playlists}
-        setPlaylists={setPlaylists}
         tracks={tracks}
-        setTracks={setTracks}
-        setPlaylistSelected={setPlaylistSelected}
+        seachPlaylists={seachPlaylists}
+        getTracksFromPlaylist={getTracksFromPlaylist}
       />
       <PlaylistTracks
         showTracks={tracks.length > 0}
