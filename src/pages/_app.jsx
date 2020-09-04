@@ -9,7 +9,10 @@ const App = ({ Component, pageProps }) => {
         <title>Clone Spotify Playlists</title>
         <link rel="shortcut icon" href="/img/favicon.ico" />
         <link rel="apple-touch-icon" href="/img/favicon.ico" />
-        <meta name="description" content="asdasd" />
+        <meta
+          name="description"
+          content="Clone Playlists to your account in Spotify"
+        />
       </Head>
       <GlobalStyles />
       <Component {...pageProps} />
