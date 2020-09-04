@@ -1,12 +1,17 @@
+import PropTypes from 'prop-types'
 import * as S from './styled'
 
-const Error = () => {
+const Error = ({ setHasError }) => {
   return (
     <S.Wrapper>
       <S.Message>Ocorreu um erro!</S.Message>
-      <S.ClosseButton />
+      <S.ClosseButton onClick={() => setHasError(false)} />
     </S.Wrapper>
   )
+}
+
+Error.propTypes = {
+  setHasError: PropTypes.func
 }
 
 export default Error
