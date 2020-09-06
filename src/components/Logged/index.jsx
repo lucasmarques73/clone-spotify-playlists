@@ -46,7 +46,7 @@ const Logged = () => {
     setTracks([])
   }
 
-  const seachPlaylists = async (query) => {
+  const searchPlaylists = async (query) => {
     const data = await requestSearchPlaylistsSpotify(query)
     setPlaylists(searchPlaylistsMapper(data.playlists))
     setTracks([])
@@ -88,7 +88,7 @@ const Logged = () => {
         showSearch={tracks.length === 0}
         playlists={playlists}
         tracks={tracks}
-        seachPlaylists={seachPlaylists}
+        searchPlaylists={searchPlaylists}
         getTracksFromPlaylist={getTracksFromPlaylist}
       />
       <PlaylistTracks

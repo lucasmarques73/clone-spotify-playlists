@@ -8,7 +8,7 @@ const SearchPlaylists = ({
   playlists,
   tracks,
   getTracksFromPlaylist,
-  seachPlaylists,
+  searchPlaylists,
   showSearch
 }) => {
   const [query, setQuery] = useState('')
@@ -18,7 +18,7 @@ const SearchPlaylists = ({
       <S.SearchWrapper
         onSubmit={(e) => {
           e.preventDefault()
-          seachPlaylists(query)
+          searchPlaylists(query)
         }}
       >
         <S.SearchForm>
@@ -47,7 +47,7 @@ SearchPlaylists.propTypes = {
   tracks: PropTypes.array,
   showSearch: PropTypes.bool,
   getTracksFromPlaylist: PropTypes.func,
-  seachPlaylists: PropTypes.func
+  searchPlaylists: PropTypes.func
 }
 
 export default SearchPlaylists
