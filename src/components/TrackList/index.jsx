@@ -48,7 +48,10 @@ const TrackList = ({
                   </S.Info>
                 </S.TrackWrapper>
                 <S.CheckboxWrapper>
-                  <Checkbox checked={tracksSelected.includes(track.id)} />
+                  <Checkbox
+                    checked={tracksSelected.includes(track.id)}
+                    onChange={() => handleTrackClick(track.id)}
+                  />
                 </S.CheckboxWrapper>
               </S.Item>
             ))}
