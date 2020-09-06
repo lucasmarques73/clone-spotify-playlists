@@ -1,8 +1,11 @@
 import Head from 'next/head'
+import { useState } from 'react'
 import GlobalStyles from 'styles/global'
+import Error from '../components/Error'
 
 // eslint-disable-next-line react/prop-types
 const App = ({ Component, pageProps }) => {
+  const [hasError, setHasError] = useState(false)
   return (
     <>
       <Head>
@@ -15,7 +18,8 @@ const App = ({ Component, pageProps }) => {
         />
       </Head>
       <GlobalStyles />
-      <Component {...pageProps} />
+      {hasError && <Error setHasError={setHasError} />}
+      <Component {...pageProps} setHasError={setHasError} />
     </>
   )
 }

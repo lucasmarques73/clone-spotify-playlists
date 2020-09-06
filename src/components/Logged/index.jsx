@@ -1,4 +1,6 @@
-import { useEffect, useState } from 'react'
+import PropTypes from 'prop-types'
+import { useCallback, useEffect, useState } from 'react'
+import { useRouter } from 'next/router'
 import * as S from './styled'
 
 import Sidebar from 'components/Sidebar'
@@ -16,7 +18,8 @@ import userPlaylistsMapper from 'mappers/userPlaylistsMapper'
 import tracksMapper from 'mappers/tracksMapper'
 import userMapper from 'mappers/userMapper'
 
-const Logged = () => {
+const Logged = ({ setHasError }) => {
+  const router = useRouter()
   const [playlists, setPlaylists] = useState([])
   const [playlistSelected, setPlaylistSelected] = useState({})
   const [tracks, setTracks] = useState([])
@@ -24,40 +27,61 @@ const Logged = () => {
   const [user, setUser] = useState({})
   const [userPlaylists, setUserPlaylists] = useState([])
 
-  useEffect(() => {
-    const runAsync = async () => {
-      const userResponse = await requestUserDataFromSpotify()
-      setUser(userMapper(userResponse))
-    }
-
-    runAsync()
-  }, [])
+  const handleError = useCallback(() => {
+    setHasError(true)
+    router.push('/')
+  }, [router, setHasError])
 
   useEffect(() => {
     const runAsync = async () => {
-      const playlistsResponse = await requestUserPlaylistsFromSpotify()
-      setUserPlaylists(userPlaylistsMapper(playlistsResponse, user.id))
+      try {
+        const userResponse = await requestUserDataFromSpotify()
+        setUser(userMapper(userResponse))
+      } catch (_) {
+        handleError()
+      }
     }
 
     runAsync()
-  }, [user])
+  }, [handleError])
+
+  useEffect(() => {
+    const runAsync = async () => {
+      try {
+        const playlistsResponse = await requestUserPlaylistsFromSpotify()
+        setUserPlaylists(userPlaylistsMapper(playlistsResponse, user.id))
+      } catch (_) {
+        handleError()
+      }
+    }
+
+    runAsync()
+  }, [user, handleError])
 
   const goBack = () => {
     setTracks([])
   }
 
   const searchPlaylists = async (query) => {
-    const data = await requestSearchPlaylistsSpotify(query)
-    setPlaylists(searchPlaylistsMapper(data.playlists))
-    setTracks([])
+    try {
+      const data = await requestSearchPlaylistsSpotify(query)
+      setPlaylists(searchPlaylistsMapper(data.playlists))
+      setTracks([])
+    } catch (_) {
+      handleError()
+    }
   }
 
   const getTracksFromPlaylist = async (playlistId) => {
-    setPlaylistSelected(
-      playlists.filter((playlist) => playlistId === playlist.id)[0]
-    )
-    const data = await requestTracksFromPlaylist(playlistId)
-    setTracks(tracksMapper(data))
+    try {
+      setPlaylistSelected(
+        playlists.filter((playlist) => playlistId === playlist.id)[0]
+      )
+      const data = await requestTracksFromPlaylist(playlistId)
+      setTracks(tracksMapper(data))
+    } catch (_) {
+      handleError()
+    }
   }
 
   const handleTrackClick = (trackId) => {
@@ -72,13 +96,20 @@ const Logged = () => {
   }
 
   const clonePlaylist = async () => {
-    const { id, name } = await requestCreateAPlaylistSpotify(
-      user.id,
-      playlistSelected.name,
-      playlistSelected.description
-    )
-    await requestAddTracksAPlaylistSpotify(id, addTracksMapper(tracksSelected))
-    setUserPlaylists([...userPlaylists, { id, name }])
+    try {
+      const { id, name } = await requestCreateAPlaylistSpotify(
+        user.id,
+        playlistSelected.name,
+        playlistSelected.description
+      )
+      await requestAddTracksAPlaylistSpotify(
+        id,
+        addTracksMapper(tracksSelected)
+      )
+      setUserPlaylists([...userPlaylists, { id, name }])
+    } catch (_) {
+      handleError()
+    }
   }
 
   return (
@@ -103,6 +134,10 @@ const Logged = () => {
       />
     </S.Wrapper>
   )
+}
+
+Logged.propTypes = {
+  setHasError: PropTypes.func
 }
 
 export default Logged

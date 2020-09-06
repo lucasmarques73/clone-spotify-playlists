@@ -1,10 +1,11 @@
+import PropTypes from 'prop-types'
 import { useEffect } from 'react'
 import { useRouter } from 'next/router'
 import requestAuthTokesFromSpotify from '../services/requestAuthTokesFromSpotify'
 import requestAuthCodeFromAPI from '../services/requestAuthCodeFromAPI'
 import manageLocalStorage from '../services/manageLocalStorage'
 
-export default function Home() {
+const Callback = ({ setHasError }) => {
   const router = useRouter()
 
   useEffect(() => {
@@ -17,18 +18,22 @@ export default function Home() {
         )
 
         if (data.error) {
-          router.push({
-            pathname: '/',
-            query: { error: true }
-          })
-        } else {
-          manageLocalStorage.setItem('tokens', data)
-          router.push('/logged')
+          setHasError(true)
+          router.push('/')
         }
+
+        manageLocalStorage.setItem('tokens', data)
+        router.push('/logged')
       }
     }
     asyncCall()
-  }, [router])
+  }, [router, setHasError])
 
   return <></>
 }
+
+Callback.propTypes = {
+  setHasError: PropTypes.func
+}
+
+export default Callback
