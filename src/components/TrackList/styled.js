@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import media from 'styled-media-query'
 
 export const CheckAllWrapper = styled.div`
   width: 100%;
@@ -67,6 +68,10 @@ export const Artists = styled.span`
 
 export const Album = styled.span`
   font-size: 1rem;
+
+  ${media.lessThan('medium')`
+    display:none
+  `}
 `
 
 export const Bold = styled.span`

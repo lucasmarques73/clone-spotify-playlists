@@ -4,9 +4,9 @@ export const Wrapper = styled.section`
   background-image: linear-gradient(rgb(70, 76, 82), rgb(7, 7, 8) 85%);
   background-color: var(--black);
   color: var(--white);
-  height: 100%;
-  width: 80%;
-  padding: 0;
+  height: 100vh;
+  width: 100%;
+  padding: 3rem 3rem 3rem 33rem;
   text-align: center;
   display: flex;
   flex-direction: column;

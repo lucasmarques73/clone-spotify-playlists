@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import media from 'styled-media-query'
 
 export const Wrapper = styled.section`
   display: flex;
@@ -33,10 +34,18 @@ export const Name = styled.span`
 
 export const Description = styled.span`
   font-size: 1.3rem;
+
+  ${media.lessThan('medium')`
+    display:none
+  `}
 `
 
 export const Owner = styled.span`
   font-size: 1.2rem;
+
+  ${media.lessThan('medium')`
+    display:none
+  `}
 `
 
 export const Bold = styled.span`
