@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import media from 'styled-media-query'
 
 export const Item = styled.li`
   padding: 1rem 0;
@@ -36,6 +37,10 @@ export const Name = styled.span`
 
 export const Description = styled.span`
   font-size: 1.3rem;
+
+  ${media.lessThan('small')`
+    display:none;
+  `}
 `
 
 export const Owner = styled.span`

@@ -8,6 +8,11 @@ export const CheckAllWrapper = styled.div`
   justify-content: flex-end;
   margin: 1rem 0;
   padding: 0 4.1rem;
+
+  ${media.lessThan('small')`
+    padding 0px 1rem;
+    justify-content: space-between;
+  `}
 `
 
 export const CheckAllText = styled.span`
@@ -21,6 +26,10 @@ export const ListWrapper = styled.section`
   overflow: scroll;
   overflow-x: hidden;
   padding: 3rem;
+
+  ${media.lessThan('small')`
+    padding 1rem;
+  `}
 `
 
 export const List = styled.ul`

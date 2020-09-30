@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import media from 'styled-media-query'
 
 export const Wrapper = styled.section`
   background-image: linear-gradient(rgb(70, 76, 82), rgb(7, 7, 8) 85%);
@@ -11,6 +12,14 @@ export const Wrapper = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  ${media.lessThan('medium')`
+    padding 3rem;
+  `}
+
+  ${media.lessThan('small')`
+    padding 0.3rem;
+  `}
 `
 
 export const GoBackButton = styled.button`

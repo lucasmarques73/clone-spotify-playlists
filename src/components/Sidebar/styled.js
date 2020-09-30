@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import media from 'styled-media-query'
 
 export const Wrapper = styled.aside`
   background: var(--ligth-black);
@@ -6,6 +7,10 @@ export const Wrapper = styled.aside`
   height: 100vh;
   width: 30rem;
   position: fixed;
+
+  ${media.lessThan('medium')`
+    display:none;
+  `}
 `
 
 export const Header = styled.header`

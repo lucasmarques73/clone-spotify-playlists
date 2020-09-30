@@ -8,6 +8,10 @@ export const Wrapper = styled.section`
   width: 100%;
   border-bottom: solid 1px var(--grey);
   padding: 1rem 3rem;
+
+  ${media.lessThan('small')`
+    padding 1rem;
+  `}
 `
 
 export const Item = styled.section`
@@ -75,4 +79,9 @@ export const Button = styled.button`
   &:disabled {
     background-color: var(--grey);
   }
+
+  ${media.lessThan('small')`
+    width: 10rem;
+    padding: 0.3rem;
+  `}
 `
