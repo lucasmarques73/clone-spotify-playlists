@@ -30,7 +30,11 @@ const PlaylistHead = ({ playlist, cantClonePlaylist, clonePlaylist }) => {
           Clonar Playlist
         </S.Button>
       </S.Wrapper>
-      <ClonePlaylistModal isOpen={openModal} onClonePlaylist={clonePlaylist} />
+      <ClonePlaylistModal
+        isOpen={openModal}
+        onClose={() => setModalOpen(false)}
+        onConfirm={clonePlaylist}
+      />
     </>
   )
 }
