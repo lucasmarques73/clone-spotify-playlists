@@ -31,10 +31,33 @@ body {
   --dark-green: #1aa34a;
   --black: #191414;
   --ligth-black: #0f1015;
-  --grey: rgba(255, 255, 255, .25);
+  --gray: rgba(255, 255, 255, .25);
   --red: #ec3e36;
 }
 
+.overlay-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--gray)
+}
+
+.modal {
+  background-image: linear-gradient(rgb(70, 76, 82), rgb(7, 7, 8) 85%);
+  background-color: var(--black);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -100px;
+  margin-left: -165px;
+  border: 1px solid var(--white);
+  overflow: hidden;
+  border-radius: 4px;
+  outline: none;
+  padding: 20px;
+}
 `
 
 export default GlobalStyles

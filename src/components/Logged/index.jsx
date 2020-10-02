@@ -95,11 +95,11 @@ const Logged = ({ setHasError }) => {
     else setTracksSelected(tracks.map((track) => track.id))
   }
 
-  const clonePlaylist = async () => {
+  const clonePlaylist = async (playlistName) => {
     try {
       const { id, name } = await requestCreateAPlaylistSpotify(
         user.id,
-        playlistSelected.name,
+        playlistName,
         playlistSelected.description
       )
       await requestAddTracksAPlaylistSpotify(

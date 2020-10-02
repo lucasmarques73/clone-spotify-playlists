@@ -45,7 +45,7 @@ export const Item = styled.li`
   cursor: pointer;
 
   &:hover {
-    background-color: var(--grey);
+    background-color: var(--gray);
   }
 `
 

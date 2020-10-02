@@ -6,7 +6,7 @@ export const Wrapper = styled.section`
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  border-bottom: solid 1px var(--grey);
+  border-bottom: solid 1px var(--gray);
   padding: 1rem 3rem;
 
   ${media.lessThan('small')`
@@ -77,7 +77,7 @@ export const Button = styled.button`
   }
 
   &:disabled {
-    background-color: var(--grey);
+    background-color: var(--gray);
   }
 
   ${media.lessThan('small')`
