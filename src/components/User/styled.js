@@ -6,7 +6,7 @@ export const Wrapper = styled.section`
   color: var(--white);
   align-items: center;
   margin: 2rem;
-  border-bottom: solid 1px var(--grey);
+  border-bottom: solid 1px var(--gray);
   padding-bottom: 1rem;
 `
 

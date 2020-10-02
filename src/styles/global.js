@@ -31,7 +31,7 @@ body {
   --dark-green: #1aa34a;
   --black: #191414;
   --ligth-black: #0f1015;
-  --grey: rgba(255, 255, 255, .25);
+  --gray: rgba(255, 255, 255, .25);
   --red: #ec3e36;
 }
 

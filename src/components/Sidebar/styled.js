@@ -15,7 +15,7 @@ export const Wrapper = styled.aside`
 
 export const Header = styled.header`
   margin: 2rem;
-  border-bottom: solid 1px var(--grey);
+  border-bottom: solid 1px var(--gray);
   padding-bottom: 1rem;
 `
 

@@ -38,6 +38,6 @@ export const IconWrapper = styled.div`
   height: 3rem;
 
   &:hover {
-    color: var(--grey);
+    color: var(--gray);
   }
 `
