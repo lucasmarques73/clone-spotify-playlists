@@ -52,12 +52,14 @@ body {
   left: 50%;
   margin-top: -100px;
   margin-left: -165px;
+  max-width: 330px;
   border: 1px solid var(--white);
   overflow: hidden;
   border-radius: 4px;
   outline: none;
   padding: 20px;
 }
+
 `
 
 export default GlobalStyles

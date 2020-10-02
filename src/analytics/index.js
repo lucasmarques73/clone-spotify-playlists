@@ -31,3 +31,11 @@ export const confirmCloneClickTrack = () => {
     label: 'Confirm Clone Playlist'
   })
 }
+
+export const thanksCloneClickTrack = () => {
+  ReactGA.event({
+    category: 'clone',
+    action: 'click',
+    label: 'Thanks Clone Playlist'
+  })
+}

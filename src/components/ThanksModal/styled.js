@@ -5,26 +5,15 @@ export const Form = styled.form`
   flex-direction: column;
 `
 
-export const Text = styled.span`
+export const Title = styled.p`
   font-size: 1.8rem;
   color: var(--white);
+  margin-bottom: 2rem;
 `
-
-export const Input = styled.input`
-  background: none;
-  border: none;
-  outline: none;
-  color: var(--white);
-  line-height: 3rem;
+export const Info = styled.p`
   font-size: 1.5rem;
-  font-weight: 400;
-  margin: 3rem 3rem 3rem 0;
-  flex-grow: 1;
-  border-bottom: solid 1px var(--gray);
-
-  :focus {
-    border-bottom: solid 1px var(--green);
-  }
+  color: var(--white);
+  margin-bottom: 2rem;
 `
 
 export const Button = styled.button`
