@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import PlaylistList from 'components/PlaylistList'
 
 import * as S from './styled'
+import { searchClickTrack } from 'analytics'
 
 const SearchPlaylists = ({
   playlists,
@@ -29,7 +30,9 @@ const SearchPlaylists = ({
             value={query}
             onChange={(e) => setQuery(e.target.value)}
           />
-          <S.SearchButton>Buscar</S.SearchButton>
+          <S.SearchButton onClick={() => searchClickTrack(query)}>
+            Buscar
+          </S.SearchButton>
         </S.SearchForm>
         {tracks.length === 0 && (
           <PlaylistList

@@ -1,3 +1,4 @@
+import { cloneClickTrack } from 'analytics'
 import ClonePlaylistModal from 'components/ClonePlaylistModal'
 import PropTypes from 'prop-types'
 import { useState } from 'react'
@@ -25,7 +26,10 @@ const PlaylistHead = ({ playlist, cantClonePlaylist, clonePlaylist }) => {
         </S.Item>
         <S.Button
           disabled={!cantClonePlaylist}
-          onClick={() => setModalOpen(true)}
+          onClick={() => {
+            cloneClickTrack()
+            setModalOpen(true)
+          }}
         >
           Clonar Playlist
         </S.Button>

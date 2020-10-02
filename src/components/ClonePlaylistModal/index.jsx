@@ -1,3 +1,4 @@
+import { confirmCloneClickTrack } from 'analytics'
 import PropTypes from 'prop-types'
 import { useEffect, useState } from 'react'
 import Modal from 'react-modal'
@@ -31,7 +32,7 @@ const ClonePlaylistModal = ({ isOpen, onClose, onConfirm, originalName }) => {
           value={playlistName}
           onChange={(e) => setPlaylistName(e.target.value)}
         />
-        <S.Button>Clonar</S.Button>
+        <S.Button onClick={confirmCloneClickTrack}>Clonar</S.Button>
       </S.Form>
     </Modal>
   )
