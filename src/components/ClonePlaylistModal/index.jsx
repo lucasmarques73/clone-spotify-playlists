@@ -1,21 +1,47 @@
 import PropTypes from 'prop-types'
+import { useEffect, useState } from 'react'
 import Modal from 'react-modal'
 
 import * as S from './styled'
 
-const ClonePlaylistModal = ({ isOpen, onClose, onConfirm }) => (
-  <Modal isOpen={isOpen} onRequestClose={onClose}>
-    <S.ModalWrapper>
-      <div>I am a modal. Use the first input to change the modal title.</div>
-      <button onClick={onConfirm}>Clonar</button>
-    </S.ModalWrapper>
-  </Modal>
-)
+const ClonePlaylistModal = ({ isOpen, onClose, onConfirm, originalName }) => {
+  const [playlistName, setPlaylistName] = useState('')
+
+  useEffect(() => {
+    setPlaylistName(originalName)
+  }, [originalName])
+
+  return (
+    <Modal
+      isOpen={isOpen}
+      onRequestClose={onClose}
+      overlayClassName="overlay-modal"
+      className="modal"
+    >
+      <S.Form
+        onSubmit={(e) => {
+          e.preventDefault()
+          onConfirm(playlistName)
+        }}
+      >
+        <S.Text>Qual o nome da sua nova playlist?</S.Text>
+        <S.Input
+          type="text"
+          autoComplete="off"
+          value={playlistName}
+          onChange={(e) => setPlaylistName(e.target.value)}
+        />
+        <S.Button>Clonar</S.Button>
+      </S.Form>
+    </Modal>
+  )
+}
 
 ClonePlaylistModal.propTypes = {
   isOpen: PropTypes.bool,
   onClose: PropTypes.func,
-  onConfirm: PropTypes.func
+  onConfirm: PropTypes.func,
+  originalName: PropTypes.string
 }
 
 export default ClonePlaylistModal

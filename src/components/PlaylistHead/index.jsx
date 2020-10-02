@@ -34,6 +34,7 @@ const PlaylistHead = ({ playlist, cantClonePlaylist, clonePlaylist }) => {
         isOpen={openModal}
         onClose={() => setModalOpen(false)}
         onConfirm={clonePlaylist}
+        originalName={playlist.name}
       />
     </>
   )
