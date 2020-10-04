@@ -11,6 +11,40 @@ const App = ({ Component, pageProps }) => {
     <>
       <Head>
         <title>Clone Spotify Playlists</title>
+        <meta charset="utf-8" />
+        <meta httpEquiv="x-ua-compatible" content="ie=edge" />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
+        <meta
+          name="description"
+          content="Clone Playlists to your account in Spotify"
+        />
+        <meta property="og:title" content="Home" />
+        <meta
+          property="og:description"
+          content="Clone Playlists to your account in Spotify"
+        />
+        <meta
+          property="og:image"
+          content="https://clone-spotify-playlists.vercel.app/img/favicon.ico"
+        />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:image:src"
+          content="https://clone-spotify-playlists.vercel.app/img/favicon.ico"
+        />
+        <meta name="twitter:creator" content="@lucas_marques" />
+        <meta
+          name="twitter:title"
+          content="Clone Playlists to your account in Spotify"
+        />
+        <meta
+          name="twitter:description"
+          content="Clone Playlists to your account in Spotify"
+        />
         <link rel="shortcut icon" href="/img/favicon.ico" />
         <link rel="apple-touch-icon" href="/img/favicon.ico" />
         <meta
