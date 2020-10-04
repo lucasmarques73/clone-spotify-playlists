@@ -21,7 +21,7 @@ const App = ({ Component, pageProps }) => {
           name="description"
           content="Clone Playlists to your account in Spotify"
         />
-        <meta property="og:title" content="Home" />
+        <meta property="og:title" content="Clone Spotify Playlists" />
         <meta
           property="og:description"
           content="Clone Playlists to your account in Spotify"
@@ -37,10 +37,7 @@ const App = ({ Component, pageProps }) => {
           content="https://clone-spotify-playlists.vercel.app/img/favicon.ico"
         />
         <meta name="twitter:creator" content="@lucas_marques" />
-        <meta
-          name="twitter:title"
-          content="Clone Playlists to your account in Spotify"
-        />
+        <meta name="twitter:title" content="Clone Spotify Playlists" />
         <meta
           name="twitter:description"
           content="Clone Playlists to your account in Spotify"
