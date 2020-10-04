@@ -28,13 +28,13 @@ const App = ({ Component, pageProps }) => {
         />
         <meta
           property="og:image"
-          content="https://clone-spotify-playlists.vercel.app/img/favicon.ico"
+          content="https://clone-spotify-playlists.vercel.app/img/spotify.png"
         />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           name="twitter:image:src"
-          content="https://clone-spotify-playlists.vercel.app/img/favicon.ico"
+          content="https://clone-spotify-playlists.vercel.app/img/spotify.png"
         />
         <meta name="twitter:creator" content="@lucas_marques" />
         <meta name="twitter:title" content="Clone Spotify Playlists" />
