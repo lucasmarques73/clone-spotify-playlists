@@ -41,7 +41,7 @@ export const Item = styled.li`
   display: flex;
   align-items: center;
   justify-content: space-between;
-
+  transition: background-color 0.3s;
   cursor: pointer;
 
   &:hover {
