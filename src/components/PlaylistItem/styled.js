@@ -6,6 +6,7 @@ export const Item = styled.li`
   display: flex;
   align-items: center;
   cursor: pointer;
+  transition: background-color 0.3s;
 
   &:hover {
     background-color: var(--gray);
