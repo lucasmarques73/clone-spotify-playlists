@@ -71,6 +71,7 @@ export const Button = styled.button`
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  transition: background-color 0.3s;
 
   &:hover {
     background-color: var(--dark-green);
