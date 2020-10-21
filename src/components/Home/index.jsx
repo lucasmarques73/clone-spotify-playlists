@@ -1,5 +1,6 @@
 import { homeClickTrack } from 'analytics'
 import Logo from 'components/Logo'
+import GithubLogo from 'components/GithubLogo'
 import * as S from './styled'
 
 const Home = () => {
@@ -10,6 +11,7 @@ const Home = () => {
         <S.Text>Login com Spotify</S.Text>
         <Logo />
       </S.Button>
+      <GithubLogo />
     </S.Wrapper>
   )
 }

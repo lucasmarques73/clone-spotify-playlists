@@ -22,7 +22,7 @@ describe('<Home />', () => {
     ).toBeInTheDocument()
   })
 
-  it('Should render the logo', () => {
+  xit('Should render the logo', () => {
     expect(
       screen.getByRole('img', {
         src: /spotify.png/
