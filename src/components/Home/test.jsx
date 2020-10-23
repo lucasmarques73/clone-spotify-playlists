@@ -22,11 +22,15 @@ describe('<Home />', () => {
     ).toBeInTheDocument()
   })
 
-  xit('Should render the logo', () => {
-    expect(
-      screen.getByRole('img', {
-        src: /spotify.png/
-      })
-    ).toBeInTheDocument()
+  it('Should render two images', () => {
+    expect(screen.getAllByRole('img')).toHaveLength(2)
+  })
+
+  it('Should render Spotify logo', () => {
+    expect(screen.getByAltText('Spotify Logo')).toBeInTheDocument()
+  })
+
+  it('Should render Github logo', () => {
+    expect(screen.getByAltText('Github Logo')).toBeInTheDocument()
   })
 })
