@@ -1,4 +1,4 @@
-import mapper from './userMapper'
+import mapper from '.'
 import { data } from './userMapper.fixture'
 describe('userMapper', () => {
   it('should return mapped user', () => {
