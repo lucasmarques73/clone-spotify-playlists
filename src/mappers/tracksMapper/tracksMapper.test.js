@@ -1,4 +1,4 @@
-import mapper from './tracksMapper'
+import mapper from '.'
 import { data } from './tracksMapper.fixture'
 describe('tracksMapper', () => {
   it('should return mapped tracks', () => {

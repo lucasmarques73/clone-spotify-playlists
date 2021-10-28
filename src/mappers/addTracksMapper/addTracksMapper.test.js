@@ -1,4 +1,4 @@
-import mapper from './addTracksMapper'
+import mapper from '.'
 describe('addTrackerMapper', () => {
   it('should return mapped tracker', () => {
     const tracksSelected = ['track1', 'track2']

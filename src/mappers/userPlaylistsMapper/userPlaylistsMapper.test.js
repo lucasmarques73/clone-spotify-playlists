@@ -1,6 +1,6 @@
-import mapper from './userPlaylistsMapper'
-import { playlists, owner } from './userPlaylistMapper.fixture'
-describe('userMapper', () => {
+import mapper from '.'
+import { playlists, owner } from './userPlaylistsMapper.fixture'
+describe('userPlaylistsMapper', () => {
   it('should return mapped users playlist', () => {
     const userPlaylistMapped = [
       {
