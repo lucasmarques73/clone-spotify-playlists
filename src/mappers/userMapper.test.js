@@ -1,9 +1,13 @@
 import mapper from './userMapper'
+import { data } from './userMapper.fixture'
 describe('userMapper', () => {
   it('should return mapped user', () => {
-    const user = { id: 1, display_name: 'name', images: [{ url: 'avatar' }] }
-    const userMapped = { id: 1, name: 'name', avatar: 'avatar' }
+    const userMapped = {
+      id: 'zaaph0d',
+      name: 'Lucas Marques',
+      avatar: 'https://i.scdn.co/image/ab6775700000ee8526ffcea6b58e482f02aa5ffa'
+    }
 
-    expect(mapper(user)).toStrictEqual(userMapped)
+    expect(mapper(data)).toStrictEqual(userMapped)
   })
 })
