@@ -3,6 +3,12 @@
 This app is used to clone some playlists in Spotify to your account.
 You can clone all musics or just select some musics.
 
+## Requirements
+
+* Node version `v16.16.0`
+* Yarn version `1.22.19`
+* Spotify Account
+
 ## Spotify Login
 
 The login is made using `src/pages/api/spotify/login.js`
