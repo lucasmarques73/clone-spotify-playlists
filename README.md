@@ -30,3 +30,7 @@ This routes will create same functions inside Vercel.
 
 First, you need to get the Spotify Enviroments Variables to Login and use the app.
 Then, just run `yarn dev`
+
+## License
+
+[MIT](https://github.com/lucasmarques73/clone-spotify-playlists/blob/main/LICENSE)
